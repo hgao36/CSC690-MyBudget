@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-//代理,反向传值
+//代理,反向传值 proxy, reverse send data
 protocol MapDelegate {
     func didDelegateText(text: String)
 }
@@ -100,13 +100,13 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         LonLatToCity()
     }
     
-    //区域改变的时候调用
+    //区域改变的时候调用 change location
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         print(mapView.region.span.latitudeDelta, mapView.region.span.longitudeDelta)
     }
     
     
-    ///将经纬度转换为城市名
+    ///将经纬度转换为城市名 name location according to lontitue
     func LonLatToCity() {
         let geocoder: CLGeocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(locationM.location!) { (placemark, error) -> Void in
@@ -115,9 +115,9 @@ class MapViewController: UIViewController,MKMapViewDelegate {
             {
                 let array = placemark! as NSArray
                 let mark = array.firstObject as! CLPlacemark
-                //街道位置
+                //街道位置 address (street)
                 let FormattedAddressLines: NSString = ((mark.addressDictionary! as NSDictionary).value(forKey: "FormattedAddressLines") as AnyObject).firstObject as! NSString
-                //具体位置
+                //具体位置 location
                 let Name: NSString = (mark.addressDictionary! as NSDictionary).value(forKey: "Name") as! NSString
                 
                 self.address = (FormattedAddressLines as String)+(Name as String)
@@ -132,7 +132,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         
     }
     
-    //显示警告框
+    //显示警告框 warnings, or show alerts
     @objc func showAlertView( text:String) {
         let av = UIAlertController(title: "", message: text as String, preferredStyle: .alert)
         av.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))

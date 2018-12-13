@@ -15,6 +15,7 @@ class BudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var expenseLaebl: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var remakLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

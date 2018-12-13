@@ -58,11 +58,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBx-gX-20z">
+                                <rect key="frame" x="8" y="31" width="272" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.70196078429999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RwO-gS-LhU" firstAttribute="leading" secondItem="qis-yr-nsq" secondAttribute="leading" constant="8" id="1MS-hL-y54"/>
                             <constraint firstAttribute="trailing" secondItem="RwO-gS-LhU" secondAttribute="trailing" constant="8" id="39X-2j-yU4"/>
+                            <constraint firstItem="iBx-gX-20z" firstAttribute="leading" secondItem="qis-yr-nsq" secondAttribute="leading" constant="8" id="9RX-UR-W8g"/>
                             <constraint firstAttribute="trailing" secondItem="6L4-sz-WkF" secondAttribute="trailing" constant="8" id="Ctf-pA-fwG"/>
                             <constraint firstAttribute="trailing" secondItem="YUq-FX-rjj" secondAttribute="trailing" constant="8" id="GXp-FJ-C5t"/>
                             <constraint firstAttribute="trailing" secondItem="YVj-h2-q0u" secondAttribute="trailing" constant="8" id="LcO-r1-HB2"/>
@@ -70,9 +77,12 @@
                             <constraint firstItem="YVj-h2-q0u" firstAttribute="top" secondItem="RwO-gS-LhU" secondAttribute="bottom" constant="7" id="R0H-ya-kyd"/>
                             <constraint firstItem="YUq-FX-rjj" firstAttribute="top" secondItem="YVj-h2-q0u" secondAttribute="bottom" constant="8" id="XL7-mw-5Ci"/>
                             <constraint firstItem="YVj-h2-q0u" firstAttribute="leading" secondItem="qis-yr-nsq" secondAttribute="leading" constant="8" id="XdK-uN-1i8"/>
+                            <constraint firstAttribute="trailing" secondItem="iBx-gX-20z" secondAttribute="trailing" constant="8" id="h5r-66-sSx"/>
                             <constraint firstItem="6L4-sz-WkF" firstAttribute="top" secondItem="YUq-FX-rjj" secondAttribute="bottom" constant="8" id="icd-0F-4EK"/>
                             <constraint firstItem="6L4-sz-WkF" firstAttribute="leading" secondItem="qis-yr-nsq" secondAttribute="leading" constant="8" id="mLX-Er-PIA"/>
+                            <constraint firstItem="iBx-gX-20z" firstAttribute="top" secondItem="RwO-gS-LhU" secondAttribute="bottom" constant="8" id="raT-K1-awa"/>
                             <constraint firstItem="RwO-gS-LhU" firstAttribute="top" secondItem="qis-yr-nsq" secondAttribute="top" constant="2" id="tk6-Pm-CHh"/>
+                            <constraint firstItem="YUq-FX-rjj" firstAttribute="top" secondItem="iBx-gX-20z" secondAttribute="bottom" constant="8" id="xld-Im-yIX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -98,6 +108,7 @@
                 <outlet property="dateLabel" destination="RwO-gS-LhU" id="CJG-Dk-5iF"/>
                 <outlet property="expenseLaebl" destination="YUq-FX-rjj" id="B0E-1N-5KA"/>
                 <outlet property="priceLabel" destination="YVj-h2-q0u" id="3ux-S8-hRL"/>
+                <outlet property="remakLabel" destination="iBx-gX-20z" id="h0H-P9-LCL"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="189.80509745127438"/>
         </tableViewCell>

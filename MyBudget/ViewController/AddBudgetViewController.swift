@@ -14,6 +14,7 @@ class AddBudgetViewController: UIViewController,MapDelegate {
     @IBOutlet weak var type: UISegmentedControl!
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var type2: UISegmentedControl!
+    @IBOutlet weak var remakTF: UITextField!
     var date = String()
     var address = String()
     
@@ -28,11 +29,13 @@ class AddBudgetViewController: UIViewController,MapDelegate {
         // Do any additional setup after loading the view.
     }
     
-    //s点击完成
+    //s点击完成 click finish button
     @IBAction func touchDone(_ sender: Any) {
         print("touchDone")
         if(price.text?.count == 0){
             showAlertView(text: "price is nil")
+        }else if(remakTF.text?.count == 0){
+            showAlertView(text: "remak is nil")
         }else if(address.count == 0){
             showAlertView(text: "address is nil")
         }else if(date.count == 0){
@@ -40,6 +43,7 @@ class AddBudgetViewController: UIViewController,MapDelegate {
         }else{
             let realm = try! Realm()
             let priceText = price.text
+            let remakText = remakTF.text
             var expenseText = ""
             if type2.selectedSegmentIndex == 0 {
                 expenseText = "diet"
@@ -52,7 +56,7 @@ class AddBudgetViewController: UIViewController,MapDelegate {
             }else{
                 expenseText = "other"
             }
-            let budget = Budget(value: ["priceStr":priceText,"typeInt":"\(type.selectedSegmentIndex)","expenseStr":expenseText,"dateStr":date,"addressStr":address])
+            let budget = Budget(value: ["priceStr":priceText,"typeInt":"\(type.selectedSegmentIndex)","remakStr":remakText,"expenseStr":expenseText,"dateStr":date,"addressStr":address])
             try! realm.write {
                 realm.add(budget)
                 showAlertView(text: "succeed")
@@ -60,7 +64,7 @@ class AddBudgetViewController: UIViewController,MapDelegate {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    //选择位置
+    //选择位置 select an address
     @IBAction func touchAddress(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         vc.delegate = self
@@ -71,18 +75,18 @@ class AddBudgetViewController: UIViewController,MapDelegate {
         addressLabel.text = text
     }
     
-    //显示警告框
+    //显示警告框 warning
     @objc func showAlertView( text:String) {
         let av = UIAlertController(title: "", message: text as String, preferredStyle: .alert)
         av.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
         self.present(av, animated: true, completion: nil)
     }
 
-    //日期选择器响应方法
+    //日期选择器响应方法 select date
     @objc func dateChanged(datePicker : UIDatePicker){
-        //更新提醒时间文本框
+        //更新提醒时间文本框 update formatter
         let formatter = DateFormatter()
-        //日期样式
+        //日期样式 date type
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         date = formatter.string(from: datePicker.date)
         self.dateLabel.text = date

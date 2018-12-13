@@ -9,11 +9,12 @@
 import UIKit
 import RealmSwift
 class Budget: Object {
-    @objc dynamic var priceStr : String?//金额
-    @objc dynamic var typeInt : String?//类型 支出收入
-    @objc dynamic var expenseStr : String?//备注
-    @objc dynamic var dateStr : String?//日期
-    @objc dynamic var addressStr : String?//地址
+    @objc dynamic var priceStr : String?//金额 amount
+    @objc dynamic var typeInt : String?//类型 支出收入 expense type
+    @objc dynamic var remakStr : String?//备注 notes
+    @objc dynamic var expenseStr : String?//分类 type
+    @objc dynamic var dateStr : String?//日期 date
+    @objc dynamic var addressStr : String?//地址 address
 }
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
@@ -28,7 +29,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
          tableView.register(UINib(nibName: "BudgetTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
 
-    //更新数据
+    //更新数据 update 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         update()
@@ -61,11 +62,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.dateLabel.text = budget.dateStr
         cell.expenseLaebl.text = budget.expenseStr
         cell.addressLabel.text = budget.addressStr
+        cell.remakLabel.text = budget.remakStr
         if budget.typeInt == "0" {
             cell.BGView.backgroundColor = UIColor.red
             cell.priceLabel.text = "-\(budget.priceStr ?? "")"
         }else{
-            cell.BGView.backgroundColor = UIColor.green
+            cell.BGView.backgroundColor = UIColor.init(displayP3Red: 40.0/255.0, green: 100.0/255.0, blue: 10.0/255.0, alpha: 1.0)
             cell.priceLabel.text = "+\(budget.priceStr ?? "")"
         }
         return cell
@@ -74,11 +76,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
       
     }
     
-    //cell高度
+    //cell高度 height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
     }
-    //删除
+    //删除 deletion
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
