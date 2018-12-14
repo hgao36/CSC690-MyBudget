@@ -11,7 +11,7 @@ import RealmSwift
 class Budget: Object {
     @objc dynamic var priceStr : String?//金额 amount
     @objc dynamic var typeInt : String?//类型 支出收入 expense type
-    @objc dynamic var remakStr : String?//备注 notes
+    @objc dynamic var noteStr : String?//备注 notes
     @objc dynamic var expenseStr : String?//分类 type
     @objc dynamic var dateStr : String?//日期 date
     @objc dynamic var addressStr : String?//地址 address
@@ -62,7 +62,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.dateLabel.text = budget.dateStr
         cell.expenseLaebl.text = budget.expenseStr
         cell.addressLabel.text = budget.addressStr
-        cell.remakLabel.text = budget.remakStr
+        cell.noteLabel.text = budget.noteStr
         if budget.typeInt == "0" {
             cell.BGView.backgroundColor = UIColor.red
             cell.priceLabel.text = "-\(budget.priceStr ?? "")"

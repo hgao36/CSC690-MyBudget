@@ -46,13 +46,13 @@ class AddBudgetViewController: UIViewController,MapDelegate {
             let remakText = remakTF.text
             var expenseText = ""
             if type2.selectedSegmentIndex == 0 {
-                expenseText = "diet"
+                expenseText = "food"
             }else if type2.selectedSegmentIndex == 1 {
                 expenseText = "travel"
             }else if type2.selectedSegmentIndex == 2 {
                 expenseText = "shopping"
             }else if type2.selectedSegmentIndex == 3 {
-                expenseText = "traffic"
+                expenseText = "transportation"
             }else{
                 expenseText = "other"
             }

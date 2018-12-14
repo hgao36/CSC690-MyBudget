@@ -60,12 +60,12 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         // 指南针
         if #available(iOS 9.0, *) {
             mapView.showsCompass = true
-            // 比例尺
+            // 比例尺 scale
             mapView.showsScale = true
-            // 交通状况
+            // 交通状况 traffic status
             mapView.showsTraffic = true
         }
-        // poi兴趣点
+        // poi兴趣点 points of interest
         mapView.showsPointsOfInterest = true
         
         

@@ -238,15 +238,6 @@
                                             <segment title="" image="type5.png"/>
                                         </segments>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Food    Travel   Shopping   Car Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Mc-xYg">
-                                        <rect key="frame" x="55" y="51" width="318" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="DEW-fu-qfW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -254,10 +245,7 @@
                                     <constraint firstItem="ooo-0c-IF9" firstAttribute="leading" secondItem="v77-qK-XSE" secondAttribute="trailing" constant="8" id="Esc-Wj-fwT"/>
                                     <constraint firstItem="ooo-0c-IF9" firstAttribute="top" secondItem="OTO-Ia-hrA" secondAttribute="top" constant="26" id="G0s-cp-6UD"/>
                                     <constraint firstItem="v77-qK-XSE" firstAttribute="leading" secondItem="OTO-Ia-hrA" secondAttribute="leading" constant="8" id="LR1-ue-g2k"/>
-                                    <constraint firstAttribute="trailing" secondItem="BH9-Mc-xYg" secondAttribute="trailing" constant="21" id="QaB-ae-zUS"/>
                                     <constraint firstAttribute="trailing" secondItem="ooo-0c-IF9" secondAttribute="trailing" constant="21" id="Y0p-GT-42X"/>
-                                    <constraint firstItem="BH9-Mc-xYg" firstAttribute="leading" secondItem="v77-qK-XSE" secondAttribute="trailing" constant="8" id="s1e-uS-A31"/>
-                                    <constraint firstItem="BH9-Mc-xYg" firstAttribute="top" secondItem="OTO-Ia-hrA" secondAttribute="top" constant="51" id="tQm-BE-5hh"/>
                                     <constraint firstItem="v77-qK-XSE" firstAttribute="centerY" secondItem="OTO-Ia-hrA" secondAttribute="centerY" id="xZg-rd-6WH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
